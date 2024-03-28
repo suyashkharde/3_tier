@@ -1,5 +1,5 @@
-FROM mysql:latest
+FROM mysql
 LABEL name="Studentapp"
-ENV MYSQL_ROOT_PASSWORD = 12345
-COPY database.sql /docker-entrypoint-database.sql
+ENV MYSQL_ROOT_PASSWORD=12345
+COPY init-db.sql /docker-entrypoint-database.sql
 CMD [ "mysqld" ]
